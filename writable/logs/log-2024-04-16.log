@@ -1,0 +1,669 @@
+ERROR - 2024-04-16 11:45:34 --> mysqli_sql_exception: Table 'pos_bawang.master_cabag' doesn't exist in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2024-04-16 11:45:59 --> mysqli_sql_exception: Table 'pos_bawang.master_cabng' doesn't exist in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-16 11:45:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'pos_bawang.master_cabng' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:45:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'pos_bawang.master_cabng' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:45:59 --> [Caused by] mysqli_sql_exception: Table 'pos_bawang.master_cabng' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabng` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-16 11:46:55 --> mysqli_sql_exception: Unknown column 'D.nam' in 'where clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-16 11:46:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'D.nam' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`nam` LIKE :D.nam: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:46:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'D.nam' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`nam` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`nam` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`nam` LIKE :D.nam: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:46:55 --> [Caused by] mysqli_sql_exception: Unknown column 'D.nam' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`nam` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`nam` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`nam` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`nam` LIKE :D.nam: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(1)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-16 11:47:11 --> mysqli_sql_exception: Unknown column 'D.name' in 'where clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-16 11:47:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'D.name' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`name` LIKE :D.name: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:47:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'D.name' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`name` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`name` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`name` LIKE :D.name: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:47:11 --> [Caused by] mysqli_sql_exception: Unknown column 'D.name' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`name` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`name` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND  `A`.`id` LIKE \'%%\' ESCAPE \'!\'
+OR  `D`.`name` LIKE \'%%\' ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND  `A`.`id` LIKE :A.id: ESCAPE \'!\'
+OR  `D`.`name` LIKE :D.name: ESCAPE \'!\'
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Controllers\Penjualan.php(696): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-16 11:48:29 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20' at line 8 in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-16 11:48:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20' at line 8
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:48:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:48:29 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-16 11:49:03 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%' escape '!')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIM...' at line 8 in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-16 11:49:03 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%' escape '!')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIM...' at line 8
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:49:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%' escape '!')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIM...' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 11:49:03 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''%%' escape '!')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIM...' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = \'0001\'
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_users`, `C`.`nama` as `nama_cabang`, `D`.`nama` as `nama_pelanggan`, `D`.`no_hp` as `no_pelanggan`, `E`.`name` as `status_transaksi`
+FROM `barang_keluar` as `A`
+INNER JOIN `master_user` as `B` ON `A`.`users`=`B`.`id`
+LEFT JOIN `master_cabang` as `C` ON `A`.`id_cabang`=`C`.`id_cabang`
+INNER JOIN `master_pelanggan` as `D` ON `A`.`id_pelanggan`=`D`.`id`
+INNER JOIN `status_transaksi_penjualan` as `E` ON `A`.`status_transaksi`=`E`.`id`
+WHERE `A`.`id_cabang` = :A.id_cabang:
+AND (`A`.`id` like \'%%\' escape \'!\' or D.nama \'%%\' escape \'!\')
+AND `A`.`status_transaksi` in(0)
+ORDER BY `A`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Controllers\Penjualan.php(695): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-16 12:12:17 --> mysqli_sql_exception: Table 'pos_bawang.status_status_transaksi_penjualan' doesn't exist in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Penjualan.php(720): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Penjualan->list_detail()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}

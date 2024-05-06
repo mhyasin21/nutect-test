@@ -1,0 +1,157 @@
+ERROR - 2024-05-01 20:08:22 --> mysqli_sql_exception: Unknown column 'C.adjusted_date' in 'order clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n    SELECT DI...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n    SELECT DI...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n    SELECT DI...')
+#3 C:\xampp\htdocs\api_posbawang\app\Views\staticReport\report_penjualan.php(56): CodeIgniter\Database\BaseConnection->query('\r\n    SELECT DI...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\api_posbawang\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\api_posbawang\system\Common.php(1178): CodeIgniter\View\View->render('staticReport/re...', Array, true)
+#7 C:\xampp\htdocs\api_posbawang\app\Controllers\Report.php(120): view('staticReport/re...', Array)
+#8 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Report->find_table()
+#9 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report))
+#10 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 20:08:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'C.adjusted_date' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Views\staticReport\report_penjualan.php(56): CodeIgniter\Database\BaseConnection->query('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN ? AND ? AND A.status_transaksi !=0 AND A.id_cabang=?
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+', [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\api_posbawang\\app\\Views\\staticReport\\report_penjualan.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('staticReport/report_penjualan', [], true)
+ 5 APPPATH\Controllers\Report.php(120): view('staticReport/report_penjualan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Report->find_table()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 20:08:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'C.adjusted_date' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN \'2024-04-29\' AND \'2024-04-30\' AND A.status_transaksi !=0 AND A.id_cabang=\'0002\'
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN \'2024-04-29\' AND \'2024-04-30\' AND A.status_transaksi !=0 AND A.id_cabang=\'0002\'
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+')
+ 3 APPPATH\Views\staticReport\report_penjualan.php(56): CodeIgniter\Database\BaseConnection->query('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN ? AND ? AND A.status_transaksi !=0 AND A.id_cabang=?
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+', [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\api_posbawang\\app\\Views\\staticReport\\report_penjualan.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('staticReport/report_penjualan', [], true)
+ 7 APPPATH\Controllers\Report.php(120): view('staticReport/report_penjualan', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Report->find_table()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 20:08:22 --> [Caused by] mysqli_sql_exception: Unknown column 'C.adjusted_date' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN \'2024-04-29\' AND \'2024-04-30\' AND A.status_transaksi !=0 AND A.id_cabang=\'0002\'
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN \'2024-04-29\' AND \'2024-04-30\' AND A.status_transaksi !=0 AND A.id_cabang=\'0002\'
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN \'2024-04-29\' AND \'2024-04-30\' AND A.status_transaksi !=0 AND A.id_cabang=\'0002\'
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+')
+ 4 APPPATH\Views\staticReport\report_penjualan.php(56): CodeIgniter\Database\BaseConnection->query('
+    SELECT DISTINCT(D.code),D.id,D.nama_barang,C.no_mobil,C.tanggal,
+	 CASE
+	    WHEN A.`time` < \'12:00:00\' THEN DATE_SUB(A.tanggal,INTERVAL 1 DAY)
+	    ELSE A.tanggal
+	  END AS adjusted_date
+    FROM barang_keluar AS A
+    INNER JOIN barang_keluar_detail AS B ON A.id=B.id_barang_keluar
+    INNER JOIN barang_masuk AS C ON B.no_mobil=C.no_mobil AND A.id_cabang=C.id_cabang
+    INNER JOIN master_barang AS D ON B.id_barang=D.id
+    WHERE IF(A.`time` < \'12:00:00\',DATE_SUB(A.tanggal,INTERVAL 1 DAY),A.tanggal) BETWEEN ? AND ? AND A.status_transaksi !=0 AND A.id_cabang=?
+    GROUP BY D.code,C.no_mobil,adjusted_date
+	order by C.adjusted_date asc
+', [...])
+ 5 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\api_posbawang\\app\\Views\\staticReport\\report_penjualan.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('staticReport/report_penjualan', [], true)
+ 8 APPPATH\Controllers\Report.php(120): view('staticReport/report_penjualan', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Report->find_table()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

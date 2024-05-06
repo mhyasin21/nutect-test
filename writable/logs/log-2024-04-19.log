@@ -1,0 +1,125 @@
+ERROR - 2024-04-19 14:02:11 --> mysqli_sql_exception: Unknown column 'A.id_cabang_tujuan' in 'on clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Transferstok.php(532): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-19 14:02:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'A.id_cabang_tujuan' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = :A.id:', [...], false)
+ 2 APPPATH\Controllers\Transferstok.php(532): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-19 14:02:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'A.id_cabang_tujuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = \'24/BK/0400001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = \'24/BK/0400001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = :A.id:', [...], false)
+ 4 APPPATH\Controllers\Transferstok.php(532): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-19 14:02:11 --> [Caused by] mysqli_sql_exception: Unknown column 'A.id_cabang_tujuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = \'24/BK/0400001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = \'24/BK/0400001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = \'24/BK/0400001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `B`.`nama` as `nama_cabang_tujuan`, `C`.`nama` as `nama_users`
+FROM `transfer_stok` as `A`
+INNER JOIN `master_cabang` as `B` ON `A`.`id_cabang_tujuan`=`B`.`id_cabang`
+INNER JOIN `master_user` as `C` ON `A`.`users`=`C`.`id`
+WHERE `A`.`id` = :A.id:', [...], false)
+ 5 APPPATH\Controllers\Transferstok.php(532): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-19 14:03:05 --> ErrorException: Undefined offset: 0
+in APPPATH\Controllers\Transferstok.php on line 543.
+ 1 APPPATH\Controllers\Transferstok.php(543): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'C:\\xampp\\htdocs\\api_posbawang\\app\\Controllers\\Transferstok.php', 543, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-19 14:14:49 --> mysqli_sql_exception: Unknown column 'C.id_canbang' in 'on clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n            S...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            S...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            S...')
+#3 C:\xampp\htdocs\api_posbawang\app\Controllers\Masterbarang.php(95): CodeIgniter\Database\BaseConnection->query('\r\n            S...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Masterbarang->list_by_mobil()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masterbarang))
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2024-04-19 14:14:57 --> mysqli_sql_exception: Unknown column 'kartu.stok.id_cabang' in 'on clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n            S...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            S...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            S...')
+#3 C:\xampp\htdocs\api_posbawang\app\Controllers\Masterbarang.php(95): CodeIgniter\Database\BaseConnection->query('\r\n            S...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Masterbarang->list_by_mobil()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masterbarang))
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2024-04-19 14:15:05 --> mysqli_sql_exception: Unknown column 'kartu_stok.id_cabang' in 'on clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n            S...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            S...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            S...')
+#3 C:\xampp\htdocs\api_posbawang\app\Controllers\Masterbarang.php(95): CodeIgniter\Database\BaseConnection->query('\r\n            S...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Masterbarang->list_by_mobil()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masterbarang))
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2024-04-19 14:39:38 --> mysqli_sql_exception: Unknown column 'A.no_mobil' in 'on clause' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Transferstok.php(548): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Transferstok->list_detail()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transferstok))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}

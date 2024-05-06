@@ -1,0 +1,59 @@
+ERROR - 2024-04-22 15:23:11 --> mysqli_sql_exception: Column 'id_cabang' in where clause is ambiguous in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `A`.*, `...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `A`.*, `...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `A`.*, `...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `A`.*, `...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Barangmasuk.php(519): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Barangmasuk->list()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-22 15:59:24 --> ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+in APPPATH\Controllers\Penjualan.php on line 179.
+ 1 SYSTEMPATH\Router\Router.php(515): CodeIgniter\Router\AutoRouter->getRoute('penjualan/list', 'post')
+ 2 SYSTEMPATH\Router\Router.php(211): CodeIgniter\Router\Router->autoRoute('penjualan/list')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('penjualan/list')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-22 15:59:47 --> ParseError: syntax error, unexpected ')'
+in APPPATH\Controllers\Penjualan.php on line 189.
+ 1 SYSTEMPATH\Router\Router.php(515): CodeIgniter\Router\AutoRouter->getRoute('penjualan/list', 'post')
+ 2 SYSTEMPATH\Router\Router.php(211): CodeIgniter\Router\Router->autoRoute('penjualan/list')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('penjualan/list')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-22 16:00:02 --> ErrorException: Undefined index: key
+in APPPATH\Controllers\Penjualan.php on line 811.
+ 1 APPPATH\Controllers\Penjualan.php(811): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: key', 'C:\\xampp\\htdocs\\api_posbawang\\app\\Controllers\\Penjualan.php', 811, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Penjualan->list()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-22 16:29:40 --> mysqli_sql_exception: Unknown column 'master_user' in 'field list' in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `master_...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `master_...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `master_...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `master_...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Users.php(342): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Users->find_all()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2024-04-22 16:34:30 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `master_...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `master_...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `master_...')
+#3 C:\xampp\htdocs\api_posbawang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `master_...', Array, false)
+#4 C:\xampp\htdocs\api_posbawang\app\Controllers\Users.php(313): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Users->get_detail()
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,182 @@
+*{
+    font-family: Poppins
+}
+
+.container-content {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  float: left;
+  width: 250px;
+  display: flex;
+  background: #f42619;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: #ffffff;
+  flex-grow: 1;
+}
+
+
+
+.navb-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navb-item:hover,
+.navb-item.active {
+  background-color: #ef8d86; /* Ubah ke warna biru ketika mouse diarahkan atau tautan aktif */
+}
+
+ul.navb {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.navb-item {
+  padding: 5px 5px 5px 10px;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.btn-custom-primary {
+  background-color: #f42619;
+  border-color: #f42619;
+  color: #fff;
+}
+
+.btn-custom-primary:hover {
+  background-color: #cb190d;
+  border-color: #cb190d;
+  color: #fff;
+}
+
+.rounded-circle {
+  width: 150px; /* Atur lebar gambar */
+  height: 150px; /* Atur tinggi gambar */
+  object-fit: cover; /* Pastikan gambar tetap berada di dalam lingkaran */
+  border-radius: 50%; /* Membuat sudut gambar menjadi bulat (lingkaran) */
+}
+
+.text-username {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.link-nav {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px 5px 5px 10px;
+}
+
+.link-nav:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li.breadcrumb-item {
+  font-size: 18px;
+  color: #dedbdb;
+  font-weight: bold;
+}
+
+.btn-aksi {
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+li.breadcrumb-item.active {
+  color: #737070;
+}
+
+li.breadcrumb-item + li.breadcrumb-item::before {
+  content: ">";
+}
+
+@media (max-width: 600px) {
+}
+
+.custom-file-container {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #adb5bd;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-file-label {
+  margin: 0;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-preview img {
+  max-height: 150px;
+  width: auto;
+}
+
+button.btn {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.login-image {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%; /* Mengatur lebar gambar sesuai kebutuhan */
+  object-fit: cover;
+}
+.login-form {
+  margin-right: 50%; /* Menyisakan ruang kosong untuk gambar di sebelah kanan */
+  padding: 20px;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}

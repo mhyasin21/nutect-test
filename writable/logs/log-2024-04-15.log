@@ -1,0 +1,28 @@
+ERROR - 2024-04-15 14:35:54 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.tanggal,
+                Qty,
+                SUBSTR(A.id,7,2) AS Tipe,
+ ...' at line 3 in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\api_posbawang\app\Controllers\Masterbarang.php(165): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Masterbarang->detail_w_stok()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masterbarang))
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2024-04-15 14:36:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.tanggal,
+                Qty,
+                SUBSTR(A.id,7,2) AS Tipe,
+ ...' at line 3 in C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\api_posbawang\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\api_posbawang\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\api_posbawang\app\Controllers\Masterbarang.php(165): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(941): App\Controllers\Masterbarang->detail_w_stok()
+#5 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masterbarang))
+#6 C:\xampp\htdocs\api_posbawang\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\api_posbawang\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
