@@ -1,2 +1,3 @@
-# nutect-test
-File test loker nuitect
+REQURMENT : 
+PHP >8.1
+DB POSTGREE 14
