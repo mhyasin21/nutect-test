@@ -8,7 +8,7 @@ DB POSTGREE 14
 jalankan perintah php spark migrate untuk import database.
 
 manual  masukan data users dan products category.
-untuk password generate hash("SHA512",nd5("PASSWORD_DISINI"))
+untuk password generate hash("SHA512",md5("PASSWORD_DISINI"))
 
 
 Semoga dapat dipahami terimakasih.
